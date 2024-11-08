@@ -65,7 +65,7 @@ void sqlInjectionExample(const char *userInput) {
 void unsafeGetsExample() {
     char buffer[10];
     std::cout << "Enter a string: ";
-    gets(buffer); // Unsafe function, can cause buffer overflow
+    fgets(buffer, sizeof(buffer), stdin); // Safe function, prevents buffer overflow
     std::cout << "You entered: " << buffer << std::endl;
 }
 
